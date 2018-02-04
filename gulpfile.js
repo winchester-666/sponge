@@ -14,7 +14,7 @@ imagemin = require('gulp-imagemin'),
 rimraf = require('rimraf'),
 browserSync = require("browser-sync"),
 concat = require('gulp-concat'),
-retina = require("gulp-img-retina"),
+// retina = require("gulp-img-retina"),
 svgSprite = require('gulp-svg-sprite'),
 svgmin = require('gulp-svgmin'),
 cheerio = require('gulp-cheerio'),
@@ -82,7 +82,7 @@ gulp.task('clean', function (cb) {
 gulp.task('html:build', function () {
     gulp.src(path.src.html) //Выберем файлы по нужному пути
         .pipe(rigger()) //Прогоним через rigger
-        .pipe(retina())
+        // .pipe(retina())
         .pipe(gulp.dest(path.build.html)) //Выплюнем их в папку build
         .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
     });
