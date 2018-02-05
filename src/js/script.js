@@ -83,9 +83,9 @@ for (var i = 0; i < linkNav.length; i++) {
 	linkNav[i].addEventListener('click', function(e) {
 		e.preventDefault();
 		document.getElementsByClassName("num_section-link--active")[0].classList.remove('num_section-link--active');
-		this.classList.add('num_section-link--active');
 		var w = window.pageYOffset,
 		hash = this.href.replace(/[^#]*(.*)/, '$1');
+		document.querySelectorAll('.num_section-link[href^="'+hash+'"]')[0].classList.add('num_section-link--active');
 		t = document.querySelector(hash).getBoundingClientRect().top,
 		start = null;
 		requestAnimationFrame(step);
